@@ -1,4 +1,4 @@
-#ifndef _LISTE_H_
+
 #define _LISTE_H_
 
 #include <commun.h>
@@ -6,7 +6,7 @@
 #define LISTE_NULL NULL
 #define LISTE_ID_NULL -1
 
-typedef enum type_tri_s { UNK , QUICK , MERGE , HEAP } type_tri_t ;
+typedef enum type_tri_s { UNK , QUICK } type_tri_t ;
 
 typedef struct liste_s
 {
@@ -144,4 +144,3 @@ err_t liste_sauver(  liste_t * liste  ,							/* liste a sauvegarder */
  */
 
 /*! @} */
-#endif

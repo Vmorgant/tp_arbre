@@ -55,10 +55,6 @@ main( int argc , char * argv[] )
 	    case QUICK : 
 	      printf("\nTRI RAPIDE\n");
 	      break ;
-	    case MERGE : printf("\nTRI FUSION\n");
-	      break ;
-	    case HEAP : printf("\nTRI PAR TAS\n");
-	      break ;
 	    default : printf("\nTri inconnu [%d] \n", type_tri );
 	      usage(nomprog);
 	      exit(-1) ;
