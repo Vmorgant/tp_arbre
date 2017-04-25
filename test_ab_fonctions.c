@@ -15,8 +15,8 @@ main(int argc , char * argv[] )
   noeud_t ** noeuds = NULL ; 
   ab_t * arbre = NULL ; 
 
-  float exp_n = 0 ; 
-  float N = 0 ; 
+  /*float exp_n = 0 ; */
+  float N = 3 ; 
 
   int i ; 
 
@@ -30,8 +30,9 @@ main(int argc , char * argv[] )
       exit(1) ;
     }
 
-  exp_n = atof(argv[1]) ;
-  N = powf( 2 , exp_n ) - 1 ; 
+  /*exp_n = atof(argv[1]) ;*/
+  /*N = powf( 2 , exp_n ) - 1 ; */
+  /* référence indéfinie vers powf */
 
   printf( "Debut du programme de test sur les fonctions  de type arbre ab_t avec %d elements\n"  , (int)N ) ; 
 
@@ -84,11 +85,9 @@ main(int argc , char * argv[] )
        }
    }
 
-<<<<<<< HEAD
+
   ab_afficher( arbre , individu_afficher_cb,SYMETRIQUE ) ; 
-=======
-  ab_afficher( arbre , individu_afficher_cb ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
+
   printf( "\n");
 
   /* ------ */

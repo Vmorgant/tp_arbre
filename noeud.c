@@ -134,18 +134,6 @@ err_t noeud_detruire( noeud_t ** noeud ,
   	  return(OK);
   
   detruire(&(*noeud)->etiquette);
-<<<<<<< HEAD
-=======
- /* if(noeud_existe((*noeud)->gauche)){
-  		  noeud_t *fg=noeud_sag_lire(*noeud);
-  		  noeud_detruire(&fg,detruire(fg));
-  }
-  if(noeud_existe((*noeud)->droit)){
-  		  noeud_t *fd=noeud_sad_lire(*noeud);
-  		  noeud_detruire(&fd,detruire(fd)) ;
-  }*/
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
- 
   return(OK) ; 
 }
 

@@ -16,7 +16,7 @@ main(int argc , char * argv[] )
   ab_t * arbre = NULL ; 
 
   float exp_n = 0 ; 
-  float N = 0 ; 
+  float N = 3 ; 
 
   int i ; 
 
@@ -34,7 +34,8 @@ main(int argc , char * argv[] )
     }
 
   exp_n = atof(argv[1]) ;
-  N = powf( 2 , exp_n ) - 1 ; 
+  /*N = powf( 2 , exp_n ) - 1 ; */
+  /* référence indéfinie vers powf */
 
   ab_parcours_t parcours = UNK  ; 
   if( ! strcmp( argv[2] , "INF"  ) ) parcours = INFIXE ;
@@ -104,11 +105,8 @@ main(int argc , char * argv[] )
    }
 
   printf( "Test affichage arbre\n" ) ;
-<<<<<<< HEAD
   ab_afficher( arbre , string_afficher_cb,parcours ) ; 
-=======
-  ab_afficher( arbre , string_afficher_cb ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
+
   printf( "\n");
 
   printf( "Test d'existance sur un arbre ab_t existant\n" ) ;
@@ -139,11 +137,8 @@ main(int argc , char * argv[] )
    }
 
   printf( "Affichage arbre charge\n" ) ;
-<<<<<<< HEAD
   ab_afficher( arbre , string_afficher_cb, parcours ) ; 
-=======
-  ab_afficher( arbre , string_afficher_cb ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
+
   printf( "\n");
 
   /*

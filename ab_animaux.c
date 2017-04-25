@@ -7,46 +7,21 @@
 
 extern 
 void ab_animaux_afficher( const ab_t * arbre , 
-			  void (*fonction_affichage)(const void *)) 
+			  void (*fonction_affichage)(const void *),ab_parcours_t parcours) 
 {
-<<<<<<< HEAD
-  ab_afficher_bis( arbre->racine ,affichage,prefixe); 
-=======
-  /***********
-   * A FAIRE *
-   ***********/
+
+  ab_afficher( arbre ,fonction_affichage,parcours); 
  
   return ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
 }
 
 /*
  * Reconnaissance 
  */
 
-<<<<<<< HEAD
 void ab_animaux_reconnaitre( ab_t * arbre , 
 			     err_t (*fonction_affectation)(void * , void *) ,
-			     void (*fonction_affichage)(const void *),int reponse) 
+			     void (*fonction_affichage)(const void *),ab_parcours_t parcours) 
 {
-    if(reponse==0){
-        if(!noeud_feuille(arbre->racine)
-            ab_afficher_bis( arbre->racine->droit ,affichage,prefixe); 
-        else
-    }
-    else
-        ab_afficher_bis( arbre->racine->gauche ,affichage,prefixe); 
 
-=======
-extern 
-void ab_animaux_reconnaitre( ab_t * arbre , 
-			     err_t (*fonction_affectation)(void * , void *) ,
-			     void (*fonction_affichage)(const void *)) 
-{
-  /***********
-   * A FAIRE *
-   ***********/
-
-  return ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
 }

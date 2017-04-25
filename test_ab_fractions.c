@@ -15,8 +15,8 @@ main(int argc , char * argv[] )
   noeud_t ** noeuds = NULL ; 
   ab_t * arbre = NULL ; 
 
-  float exp_n = 0 ; 
-  float N = 0 ; 
+  /*float exp_n = 0 ; */
+  float N = 3 ; 
 
   int i ; 
 
@@ -33,8 +33,9 @@ main(int argc , char * argv[] )
       exit(1) ;
     }
 
-  exp_n = atof(argv[1]) ;
-  N = powf( 2 , exp_n ) - 1 ; 
+  /*exp_n = atof(argv[1]) ;*/
+  /*N = powf( 2 , exp_n ) - 1 ; */
+  /* référence indéfinie vers powf */
   
   ab_parcours_t parcours = UNK  ; 
   if( ! strcmp( argv[2] , "INF"  ) ) parcours = INFIXE ;
@@ -102,11 +103,7 @@ main(int argc , char * argv[] )
    }
 
   printf( "Test affichage arbre\n" ) ;
-<<<<<<< HEAD
   ab_afficher( arbre , fraction_afficher_cb, parcours ) ; 
-=======
-  ab_afficher( arbre , fraction_afficher_cb ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   printf( "\n");
 
   printf( "Test d'existance sur un arbre ab_t existant\n" ) ;
@@ -126,28 +123,9 @@ main(int argc , char * argv[] )
       return(noerr) ; 
     }
   
-<<<<<<< HEAD
-/* printf( "Test chargement arbre\n" ) ;
-=======
- printf( "Test chargement arbre\n" ) ;
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
- if( ( noerr = ab_charger( &arbre  , FICH_TEST , 			
-			   fraction_copier_cb , fraction_detruire_cb , 
-			   fraction_charger_cb ) ) )  
-   { 
-     printf("Sortie avec code erreur = %d\n" , noerr ) ;
-     err_print(noerr) ;
-     return(noerr) ; 
-   }
-<<<<<<< HEAD
-*/
   printf( "Affichage arbre charge\n" ) ;
   ab_afficher( arbre , fraction_afficher_cb , SYMETRIQUE) ; 
-=======
 
-  printf( "Affichage arbre charge\n" ) ;
-  ab_afficher( arbre , fraction_afficher_cb ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   printf( "\n");
 
   /*

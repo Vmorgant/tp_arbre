@@ -5,10 +5,6 @@
 
 #define FICH_TEST "Fichiers/test_ab_individus.fich"
 
-<<<<<<< HEAD
-
-=======
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
 int
 main(int argc , char * argv[] ) 
 {
@@ -18,13 +14,8 @@ main(int argc , char * argv[] )
   individu_t ** individus = NULL  ; 
   noeud_t ** noeuds = NULL ; 
   ab_t * arbre = NULL ; 
-
-<<<<<<< HEAD
-  float exp_n = 0 ;
-=======
-  float exp_n = 0 ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
-  float N = 0 ; 
+  float exp_n;
+  float N = 3 ; 
 
   int i ; 
 
@@ -42,31 +33,21 @@ main(int argc , char * argv[] )
     }
 
   exp_n = atof(argv[1]) ;
-  N = powf( 2 , exp_n ) - 1 ; 
-
-<<<<<<< HEAD
-  ab_parcours_t parcours = UNK  ; 
-  if( ! strcmp( argv[2] , "INF"  ) ) parcours = INFIXE ;
-  if( ! strcmp( argv[2] , "POST" ) ) parcours = POSTFIXE ;
-  if( ! strcmp( argv[2] , "PRE"  ) ) parcours = PREFIXE ;
-=======
+  /*N = powf( 2 , exp_n ) - 1 ; */
+  /* référence indéfinie vers powf */
 
   ab_parcours_t parcours = UNK  ; 
   if( ! strcmp( argv[2] , "INF"  ) ) parcours = INFIXE ;
   if( ! strcmp( argv[2] , "POST" ) ) parcours = POSTFIXE ;
   if( ! strcmp( argv[2] , "SYM"  ) ) parcours = SYMETRIQUE ;
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   if( parcours == UNK ) 
     {
       printf( "Parametre <parcours> incorrect (%s)\n" , argv[2] ) ; 
       printf( "\t <parcours>: type de parcours dans l'affichage de l'arbre\n" ) ; 
       printf( "\t            INF  --> Infixe \n" ) ; 
       printf( "\t            POST --> Postfixe \n" ) ; 
-<<<<<<< HEAD
       printf( "\t            PRE  --> Prefixe \n" ) ; 
-=======
-      printf( "\t            SYM  --> Symetrique \n" ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
+
       exit(1) ;
     }
 
@@ -108,11 +89,7 @@ main(int argc , char * argv[] )
 
  printf( "Test d'existance sur un ab_t inexistant\n" ) ;
  ( ab_existe(arbre) ? printf("-->KO\n") : printf ("-->OK\n") )  ;
-<<<<<<< HEAD
  
-=======
-
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
  printf( "Test Creation d'un ab_t \n" ) ;
  if( ( arbre = ab_creer( individu_referencer_cb , individu_effacer_cb ) ) == NULL )
    { 
@@ -130,11 +107,8 @@ main(int argc , char * argv[] )
    }
 
   printf( "Test affichage arbre\n" ) ;
-<<<<<<< HEAD
+  
   ab_afficher( arbre , individu_afficher_cb,parcours ) ; 
-=======
-  ab_afficher( arbre , individu_afficher_cb ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   printf( "\n");
 
   printf( "Test d'existance sur un arbre ab_t existant\n" ) ;
@@ -154,11 +128,8 @@ main(int argc , char * argv[] )
       return(noerr) ; 
     }
   
-<<<<<<< HEAD
-/* printf( "Test chargement arbre\n" ) ;
-=======
+
  printf( "Test chargement arbre\n" ) ;
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
  if( ( noerr = ab_charger( &arbre  , FICH_TEST , 			
 			   individu_copier_cb , individu_detruire_cb , 
 			   individu_charger_cb ) ) )  
@@ -167,15 +138,9 @@ main(int argc , char * argv[] )
      err_print(noerr) ;
      return(noerr) ; 
    }
-<<<<<<< HEAD
-*/
   printf( "Affichage arbre charge\n" ) ;
   ab_afficher( arbre , individu_afficher_cb, parcours  ) ; 
-=======
 
-  printf( "Affichage arbre charge\n" ) ;
-  ab_afficher( arbre , individu_afficher_cb ) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   printf( "\n");
 
   /*
@@ -191,3 +156,4 @@ main(int argc , char * argv[] )
 
   return(0) ; 
 }
+

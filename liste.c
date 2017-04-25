@@ -225,24 +225,10 @@ err_t liste_trier( liste_t * liste , int (*comparer)( const void * , const void 
   va_start( ap , comparer ) ; 
   type_tri = va_arg( ap , type_tri_t ) ;
   switch( type_tri )
-<<<<<<< HEAD
-    {/*
-=======
     {
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
     case QUICK : 
       qsort( liste->liste , (size_t)liste->nb , sizeof(void *) , comparer ) ;
       break ;
-    case MERGE : 
-      mergesort( liste->liste , (size_t)liste->nb , sizeof(void *) , comparer ) ;
-      break ; 
-    case HEAP : 
-      heapsort( liste->liste , (size_t)liste->nb , sizeof(void *) , comparer ) ; 
-<<<<<<< HEAD
-      break ; */
-=======
-      break ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
     default :
       /* 
        * Pas de parametre en surnombre ou type incorrect

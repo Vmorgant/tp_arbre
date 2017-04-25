@@ -10,11 +10,7 @@
  * Type de parcours
  */
 
-<<<<<<< HEAD
 typedef enum ab_parcours_s { UNK , INFIXE , POSTFIXE , PREFIXE, SYMETRIQUE } ab_parcours_t ;
-=======
-typedef enum ab_parcours_s { UNK , INFIXE , POSTFIXE , SYMETRIQUE } ab_parcours_t ;
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
 
 /* 
  * Type Arbre Binaire 
@@ -62,12 +58,7 @@ extern err_t ab_detruire( ab_t ** arbre )  ;
  */
 
 extern void ab_afficher( const ab_t * arbre , 
-<<<<<<< HEAD
-			 void (*fonction_affichage)(const void *),ab_parcours_t parcours); 
-			
-=======
-			 void (*fonction_affichage)(const void *))  ;
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
+void (*fonction_affichage)(const void *),ab_parcours_t parcours); 
 
 /*
  * Chargement d'un arbre a partir d'un fichier 
@@ -91,16 +82,12 @@ extern  err_t ab_sauver( const ab_t * arbre  ,						/* Arbre Binaire d'elements 
  * Recherche du pere d'un noeud dans un arbre 
  */
 
-<<<<<<< HEAD
 extern
 noeud_t * ab_pere_rechercher_bis( noeud_t * noeud_fils,
 			      noeud_t * noeud_pere) ;
 			      
-extern noeud_t * ab_pere_rechercher( ab_t * arbre , 
-				     noeud_t * noeud_fils ) ;
-=======
-extern noeud_t * ab_pere_rechercher( const ab_t * arbre , 
-				     const noeud_t * noeud_fils ) ;
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
+extern
+noeud_t * ab_pere_rechercher( ab_t * arbre , 
+			      noeud_t * noeud_fils );
 
 #endif

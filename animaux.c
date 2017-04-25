@@ -10,7 +10,7 @@ main( int argc  , char * argv[] )
   char nom_fichier_sauvegarde[MAX_STRING] ; 
   char nom_fichier_animaux[MAX_STRING] ; 
   booleen_t sauvegarde = FAUX ; 
-
+  ab_parcours_t parcours = INFIXE;
   strcpy( nomprog , argv[0] ) ; 
 
   printf( "----- Debut %s ----- \n"  , nomprog ) ; 
@@ -33,7 +33,7 @@ main( int argc  , char * argv[] )
   
 
   printf("Affichage\n\n") ; 
-  ab_animaux_afficher( arbre , string_string_afficher_cb ) ; 
+  ab_animaux_afficher( arbre , string_string_afficher_cb,parcours ) ; 
   printf( "\n");
 
   printf("Reconnaissance\n\n") ; 
@@ -41,13 +41,13 @@ main( int argc  , char * argv[] )
   continuer = VRAI ; 
   while( continuer )
     {
-      ab_animaux_reconnaitre( arbre , string_copier_cb , string_string_afficher_cb ) ; 
+      ab_animaux_reconnaitre( arbre , string_copier_cb , string_string_afficher_cb,parcours ) ; 
       continuer = OuiNon_saisir("Voulez vous recommencer ? ") ;       
     }
   printf( "\n");
 
   printf("Affichage apres reconnaissance\n\n") ; 
-  ab_animaux_afficher( arbre , string_string_afficher_cb ) ; 
+  ab_animaux_afficher( arbre , string_string_afficher_cb,parcours ) ; 
   printf( "\n");
   
   sauvegarde = OuiNon_saisir("Voulez vous sauvegarder le nouvel arbre ?") ; 

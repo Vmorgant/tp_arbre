@@ -18,10 +18,7 @@ endif
 
 
 ifeq ($(ARCH),apple)
-<<<<<<< HEAD
-=======
 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
 	ifeq ($(DEBUG),yes)
 	      CFLAGS=-Wall -g -D_DEBUG_ -D_APPLE_
 	else

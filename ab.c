@@ -11,10 +11,6 @@ err_t ab_racine_ecrire( ab_t * arbre ,
 			noeud_t * racine ) 
 {
   arbre->racine=racine;
-<<<<<<< HEAD
-  
-=======
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   return(OK) ; 
 }
 
@@ -27,11 +23,8 @@ int ab_taille_lire( const ab_t * arbre )
 extern
 err_t ab_taille_incrementer( ab_t * arbre ) 
 {
-<<<<<<< HEAD
-  arbre->taille++;
-=======
+
   arbre->taille+=1;
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   return(OK);
 }
 
@@ -43,11 +36,7 @@ err_t ab_taille_incrementer( ab_t * arbre )
 extern
 booleen_t ab_existe( const ab_t * arbre )
 {
-<<<<<<< HEAD
   if(arbre ==NULL)
-=======
-  if(ab_racine_lire(arbre ) ==NULL)
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
       return(FAUX);
   return(VRAI) ; 
 }
@@ -55,11 +44,7 @@ booleen_t ab_existe( const ab_t * arbre )
 extern
 booleen_t ab_vide( const ab_t * arbre )
 {
-<<<<<<< HEAD
   if(ab_taille_lire(arbre)==0)
-=======
-  if(ab_taille_lire==0)
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
       return(VRAI);
   return(FAUX) ; 
 }
@@ -73,19 +58,10 @@ ab_t * ab_creer( err_t (*fonction_affectation)( void * e1 , void * e2 ) ,	/*!< F
 		 err_t (*fonction_destruction)( void * e)  )			/*!< Fonction de destruction d'un element */
 {
   ab_t * arbre = NULL ; 
-<<<<<<< HEAD
   arbre=malloc(sizeof(ab_t));
   arbre->racine=NULL;
   arbre->affecter=fonction_affectation;
   arbre->detruire=fonction_destruction;
-  
-  
-=======
-
-  arbre->affecter=fonction_affectation;
-  arbre->detruire=fonction_destruction;
-  
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
   return(arbre) ; 
 }
 
@@ -93,7 +69,6 @@ ab_t * ab_creer( err_t (*fonction_affectation)( void * e1 , void * e2 ) ,	/*!< F
 /*
  * Destruction 
  */
-<<<<<<< HEAD
 extern 
 err_t ab_detruire_bis( noeud_t * noeud,err_t (*detruire)( void * e) ) 
 {
@@ -118,31 +93,12 @@ err_t ab_detruire( ab_t ** arbre )
 	else
 		ab_detruire_bis((*arbre)->racine,(*arbre)->detruire);
 	return(OK);
-=======
-
-extern 
-err_t ab_detruire( ab_t ** arbre ) 
-{
-  /*if(ab_vide(**arbre))
-		return 0;
-	if(){
-		ab_detruire();
-	}
-	if(){
-		
-		ab_detruire();
-	}
-  */
-  return(OK) ; 
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
 }
-
 /*
  * Affichage d'un arbre selon 
  * --> Adaptez cette fonction pour qu'elle puisse afficher l'arbre dans un parcours soit 
  * - infixe
  * - postfixe
-<<<<<<< HEAD
  * - prefixe
  */
 extern 
@@ -173,18 +129,6 @@ void ab_afficher( const ab_t * arbre ,
 		printf("Arbre vide");
 	else
 		ab_afficher_bis(arbre->racine,fonction_affichage,parcours);
-=======
- * - symetrique 
- */
-
-extern 
-void ab_afficher( const ab_t * arbre , 
-		  void (*fonction_affichage)(const void *)) 
-{
-  /***********
-   * A FAIRE *
-   ***********/
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
 }
 
 
@@ -462,7 +406,6 @@ err_t ab_sauver( const ab_t * arbre  ,						/* Arbre Binaire d'elements a charge
  */
 
 extern
-<<<<<<< HEAD
 noeud_t * ab_pere_rechercher_bis( noeud_t * noeud_fils,
 			      noeud_t * noeud_pere) 
 			      
@@ -488,14 +431,6 @@ noeud_t * ab_pere_rechercher( ab_t * arbre ,
 	if(arbre->racine==noeud_fils)
 		return(NULL);
 	return(ab_pere_rechercher_bis(noeud_fils,arbre->racine));
-=======
-noeud_t * ab_pere_rechercher( const ab_t * arbre , 
-			      const noeud_t * noeud_fils )
-{
-  /***********
-   * A FAIRE *
-   ***********/
-  return(NULL);
->>>>>>> 531871622e69db7962683dac4cf52885a4f12b93
+
 }
 
