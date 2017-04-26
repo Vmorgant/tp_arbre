@@ -69,13 +69,28 @@ ab_t * ab_creer( err_t (*fonction_affectation)( void * e1 , void * e2 ) ,	/*!< F
 /*
  * Destruction
  */
-
+static 
+err_t ab_detruire_bis( noeud_t * racine, err_t (*fonction_destruction)( void * e)  ){
+    if(noeud_feuille(racine)){
+        fonction_destruction(racine);
+        free(racine);
+        return(OK);
+    }
+    else{
+       if(noeud_existe(racine->gauche))
+            ab_detruire_bis(racine->gauche,fonction_destruction);
+       if(noeud_existe(racine->droit))
+            ab_detruire_bis(racine->droit,fonction_destruction); 
+       fonction_destruction(racine);
+       free(racine);
+       return(OK);
+    }
+}
 extern
-err_t ab_detruire( ab_t ** arbre )
-{
-  (*arbre)->detruire((*arbre)->racine);
-  free(*arbre);
-  (*arbre) = NULL;
+err_t ab_detruire( ab_t ** arbre ){
+    ab_detruire_bis((*arbre)->racine,(*arbre)->detruire);
+    free(*arbre);
+    (*arbre) = NULL;
 
   return(OK) ;
 }
